@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Mobile responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NexCollab - Connect. Collaborate. Grow.</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         SCROLL PROGRESS BAR
+    ========================================== -->
+
+    <div class="scroll-progress"><div class="scroll-progress-fill" id="scrollProgressFill"></div></div>
+
+
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
+
+    <header class="navbar-wrapper">
+
+        <nav class="navbar">
+
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+
+                <!-- Logo icon -->
+                <div class="logo-icon">
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <span class="logo-text">
+                    Nex<span>Collab</span>
+                </span>
+
+            </a>
+
+
+            <!-- Desktop Navigation -->
+            <div class="nav-links">
+
+                <!-- Discover dropdown -->
+                <div class="nav-item dropdown">
+
+                    <a href="#" class="nav-link">
+                        Discover
+                        <span class="arrow">⌄</span>
+                    </a>
+
+                    <div class="dropdown-menu">
+
+                        <a href="#">
+                            <div class="drop-icon">✦</div>
+                            <div>
+                                <strong>Find Creators</strong>
+                                <small>Discover influencers</small>
+                            </div>
+                        </a>
+
+                        <a href="#">
+                            <div class="drop-icon">↗</div>
+                            <div>
+                                <strong>Trending Creators</strong>
+                                <small>See what's trending</small>
+                            </div>
+                        </a>
+
+                        <a href="#">
+                            <div class="drop-icon">◈</div>
+                            <div>
+                                <strong>Categories</strong>
+                                <small>Explore by niche</small>
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Brands -->
+                <div class="nav-item dropdown">
+
+                    <a href="#" class="nav-link">
+                        For Brands
+                        <span class="arrow">⌄</span>
+                    </a>
+
+                    <div class="dropdown-menu">
+
+                        <a href="#">
+                            <div class="drop-icon">◉</div>
+                            <div>
+                                <strong>Find Influencers</strong>
+                                <small>Find your perfect match</small>
+                            </div>
+                        </a>
+
+                        <a href="#">
+                            <div class="drop-icon">＋</div>
+                            <div>
+                                <strong>Create Campaign</strong>
+                                <small>Launch your campaign</small>
+                            </div>
+                        </a>
+
+                        <a href="#">
+                            <div class="drop-icon">▣</div>
+                            <div>
+                                <strong>Dashboard</strong>
+                                <small>Manage campaigns</small>
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Creators -->
+                <div class="nav-item dropdown">
+
+                    <a href="#" class="nav-link">
+                        For Creators
+                        <span class="arrow">⌄</span>
+                    </a>
+
+                    <div class="dropdown-menu">
+
+                        <a href="#">
+                            <div class="drop-icon">✧</div>
+                            <div>
+                                <strong>Brand Deals</strong>
+                                <small>Find opportunities</small>
+                            </div>
+                        </a>
+
+                        <a href="#">
+                            <div class="drop-icon">◎</div>
+                            <div>
+                                <strong>Creator Profile</strong>
+                                <small>Build your profile</small>
+                            </div>
+                        </a>
+
+                        <a href="#">
+                            <div class="drop-icon">⚡</div>
+                            <div>
+                                <strong>Opportunities</strong>
+                                <small>Discover new deals</small>
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- How it works -->
+                <a href="#howItWorks" class="nav-link">
+                    How It Works
+                </a>
+
+            </div>
+
+
+            <!-- Right buttons -->
+           <div class="nav-actions">
+
+    <div id="navAuthButtons">
+        <a href="auth.html" class="login-btn">Login</a>
+        <a href="auth.html" class="start-btn">
+            <span>Get Started</span>
+            <span class="start-arrow">→</span>
+        </a>
+    </div>
+
+    <div id="navUserMenu" class="nav-user-menu" style="display:none;">
+        <div class="nav-user-avatar" id="navUserAvatar"></div>
+        <span id="navUserName" class="nav-user-name"></span>
+        <button id="navLogoutBtn" class="nav-logout-btn">Logout</button>
+    </div>
+
+</div>
+
+            <!-- Mobile menu button -->
+            <button class="menu-btn" id="menuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =========================================
+         3D BACKGROUND
+         No image attachment required
+    ========================================== -->
+
+    <div class="background">
+
+        <!-- Large glowing orb -->
+        <div class="orb orb-one"></div>
+
+        <!-- Second orb -->
+        <div class="orb orb-two"></div>
+
+        <!-- Floating glass shapes -->
+        <div class="glass-shape shape-one"></div>
+        <div class="glass-shape shape-two"></div>
+
+        <!-- Small particles generated by JS -->
+        <div id="particles"></div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         DEMO HERO SECTION
+         Replace this with your actual website hero
+    ========================================== -->
+
+    <main class="hero">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                <span class="badge-dot"></span>
+                The future of creator collaboration
+            </div>
+
+            <h1>
+                Where Brands
+                <span>Meet Creators.</span>
+            </h1>
+
+            <p>
+                NexCollab connects ambitious brands with the right
+                creators to build meaningful campaigns and grow together.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="auth.html" target="_blank" rel="noopener" class="hero-primary">
+                    Start Collaborating
+                    <span>→</span>
+                </a>
+
+                <a href="#" class="hero-secondary">
+                    Explore Creators
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+<section class="category-section">
+
+        <!-- Small heading -->
+        <div class="section-heading">
+            <span class="heading-line"></span>
+
+            <p>
+                CATEGORIES WE CONNECT
+            </p>
+
+            <span class="heading-line"></span>
+        </div>
+
+
+        <!-- Main marquee -->
+        <div class="marquee-wrapper">
+
+            <!-- Left gradient fade -->
+            <div class="fade-left"></div>
+
+            <!-- Moving track -->
+            <div class="marquee-track" id="marqueeTrack">
+
+                <!-- ==============================
+                     FIRST SET
+                =============================== -->
+
+                <div class="category-item">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <span>BEAUTY</span>
+                </div>
+
+                <div class="category-item">
+                    <i class="fa-solid fa-shirt"></i>
+                    <span>FASHION</span>
+                </div>
+
+                <div class="category-item">
+                    <i class="fa-solid fa-dumbbell"></i>
+                    <span>FITNESS</span>
+                </div>
+
+                <div class="category-item">
+                    <i class="fa-solid fa-spa"></i>
+                    <span>WELLNESS</span>
+                </div>
+
+                <div class="category-item">
+                    <i class="fa-solid fa-utensils"></i>
+                    <span>FOOD</span>
+                </div>
+
+                <div class="category-item">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <span>TECH</span>
+                </div>
+
+                <div class="category-item">
+                    <i class="fa-solid fa-gamepad"></i>
+                    <span>GAMING</span>
+                </div>
+
+                <div class="category-item">
+                    <i class="fa-solid fa-plane"></i>
+                    <span>TRAVEL</span>
+                </div>
+
+                <div class="category-item">
+                    <i class="fa-solid fa-gem"></i>
+                    <span>JEWELRY</span>
+                </div>
+
+                <div class="category-item">
+                    <i class="fa-solid fa-camera"></i>
+                    <span>LIFESTYLE</span>
+                </div>
+
+                <div class="category-item">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    <span>GADGETS</span>
+                </div>
+
+                <div class="category-item">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    <span>SHOPPING</span>
+                </div>
+
+
+                <!-- ==============================
+                     DUPLICATE SET
+                     Needed for infinite loop
+                =============================== -->
+
+                <div class="category-item">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <span>BEAUTY</span>
+                </div>
+
+                <div class="category-item">
+                    <i class="fa-solid fa-shirt"></i>
+                    <span>FASHION</span>
+                </div>
+
+                <div class="category-item">
+                    <i class="fa-solid fa-dumbbell"></i>
+                    <span>FITNESS</span>
+                </div>
+
+                <div class="category-item">
+                    <i class="fa-solid fa-spa"></i>
+                    <span>WELLNESS</span>
+                </div>
+
+                <div class="category-item">
+                    <i class="fa-solid fa-utensils"></i>
+                    <span>FOOD</span>
+                </div>
+
+                <div class="category-item">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <span>TECH</span>
+                </div>
+
+                <div class="category-item">
+                    <i class="fa-solid fa-gamepad"></i>
+                    <span>GAMING</span>
+                </div>
+
+                <div class="category-item">
+                    <i class="fa-solid fa-plane"></i>
+                    <span>TRAVEL</span>
+                </div>
+
+                <div class="category-item">
+                    <i class="fa-solid fa-gem"></i>
+                    <span>JEWELRY</span>
+                </div>
+
+                <div class="category-item">
+                    <i class="fa-solid fa-camera"></i>
+                    <span>LIFESTYLE</span>
+                </div>
+
+                <div class="category-item">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    <span>GADGETS</span>
+                </div>
+
+                <div class="category-item">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    <span>SHOPPING</span>
+                </div>
+
+            </div>
+
+            <!-- Right gradient fade -->
+            <div class="fade-right"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         HOW IT WORKS — REGISTER → DISCOVER → COLLAB
+         Step-by-step journey timeline with scroll-linked
+         line fill + alternating card reveal animation
+    ===================================================== -->
+
+    <section class="how-it-works-section" id="howItWorks">
+
+        <div class="section-heading">
+            <span class="heading-line"></span>
+            <p>HOW NEXCOLLAB WORKS</p>
+            <span class="heading-line"></span>
+        </div>
+
+        <div class="hiw-heading">
+            <h2>From Sign-Up To <span>Live Collab.</span></h2>
+            <p>One simple journey — built so influencers get discovered
+               for exactly what they're good at, and brands never have
+               to guess who to work with.</p>
+        </div>
+
+        <div class="hiw-timeline" id="hiwTimeline">
+
+            <div class="hiw-line">
+                <div class="hiw-line-fill" id="hiwLineFill"></div>
+            </div>
+
+            <div class="hiw-step" data-side="left">
+                <div class="hiw-dot"></div>
+                <div class="hiw-card">
+                    <div class="hiw-top">
+                        <div class="hiw-icon"><i class="fa-solid fa-user-plus"></i></div>
+                        <span class="hiw-num">01</span>
+                    </div>
+                    <h3>Influencer Registers</h3>
+                    <p>Creator signs up on NexCollab and sets up a profile —
+                       niche, audience size, past work, everything a brand
+                       needs to know at a glance.</p>
+                </div>
+            </div>
+
+            <div class="hiw-step" data-side="right">
+                <div class="hiw-dot"></div>
+                <div class="hiw-card">
+                    <div class="hiw-top">
+                        <div class="hiw-icon"><i class="fa-solid fa-id-badge"></i></div>
+                        <span class="hiw-num">02</span>
+                    </div>
+                    <h3>Profile Goes Live</h3>
+                    <p>The influencer's profile becomes discoverable in the
+                       feed — searchable by category, so the right brands
+                       can actually find them.</p>
+                </div>
+            </div>
+
+            <div class="hiw-step" data-side="left">
+                <div class="hiw-dot"></div>
+                <div class="hiw-card">
+                    <div class="hiw-top">
+                        <div class="hiw-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                        <span class="hiw-num">03</span>
+                    </div>
+                    <h3>Brand Finds & Approaches</h3>
+                    <p>Whenever a brand needs a specific kind of influencer,
+                       they search by niche and directly approach the
+                       creators who fit their campaign.</p>
+                </div>
+            </div>
+
+            <div class="hiw-step" data-side="right">
+                <div class="hiw-dot"></div>
+                <div class="hiw-card">
+                    <div class="hiw-top">
+                        <div class="hiw-icon"><i class="fa-solid fa-handshake"></i></div>
+                        <span class="hiw-num">04</span>
+                    </div>
+                    <h3>Collab & Promote — Both Win</h3>
+                    <p>Influencer and brand team up on the promotion.
+                       The brand gets genuine reach, the influencer gets
+                       paid work — a real win-win.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+     3D BRAND × CREATOR CONNECTION SECTION
+===================================================== -->
+
+<section class="connection-3d-section" id="connection3D">
+
+    <!-- Background glow -->
+    <div class="connection-glow glow-one"></div>
+    <div class="connection-glow glow-two"></div>
+
+    <!-- Small top label -->
+    <div class="connection-label">
+        <span></span>
+        THE CONNECTION
+        <span></span>
+    </div>
+
+
+    <!-- Main heading -->
+    <div class="connection-heading">
+
+        <h2>
+            ONE PLATFORM.
+            <br>
+
+            <span>INFINITE COLLABORATIONS.</span>
+        </h2>
+
+        <p>
+            Where brands meet creators that actually fit.
+        </p>
+
+    </div>
+
+
+    <!-- ===============================================
+         3D SCENE
+    ================================================ -->
+
+    <div class="connection-scene" id="connectionScene">
+
+
+        <!-- Floating particles -->
+
+        <div class="connection-particle particle-1"></div>
+        <div class="connection-particle particle-2"></div>
+        <div class="connection-particle particle-3"></div>
+        <div class="connection-particle particle-4"></div>
+        <div class="connection-particle particle-5"></div>
+        <div class="connection-particle particle-6"></div>
+
+
+        <!-- ==========================================
+             ORBITING CATEGORIES
+        =========================================== -->
+
+        <div class="orbit orbit-one">
+
+            <div class="orbit-card beauty">
+                <div class="orbit-icon">✦</div>
+                <span>BEAUTY</span>
+            </div>
+
+        </div>
+
+
+        <div class="orbit orbit-two">
+
+            <div class="orbit-card fashion">
+                <div class="orbit-icon">◈</div>
+                <span>FASHION</span>
+            </div>
+
+        </div>
+
+
+        <div class="orbit orbit-three">
+
+            <div class="orbit-card fitness">
+                <div class="orbit-icon">◆</div>
+                <span>FITNESS</span>
+            </div>
+
+        </div>
+
+
+        <div class="orbit orbit-four">
+
+            <div class="orbit-card tech">
+                <div class="orbit-icon">⌁</div>
+                <span>TECH</span>
+            </div>
+
+        </div>
+
+
+        <!-- ==========================================
+             CREATOR CARD
+        =========================================== -->
+
+        <div class="connection-card creator-card">
+
+            <div class="card-top">
+                <span class="status-dot"></span>
+                CREATOR
+            </div>
+
+            <div class="creator-avatar">
+                <span>✦</span>
+            </div>
+
+            <h3>
+                CREATOR
+            </h3>
+
+            <p>
+                Your influence.
+            </p>
+
+        </div>
+
+
+        <!-- ==========================================
+             CENTER CONNECTION
+        =========================================== -->
+
+        <div class="connection-center">
+
+            <div class="center-ring ring-one"></div>
+            <div class="center-ring ring-two"></div>
+            <div class="center-ring ring-three"></div>
+
+            <div class="center-core">
+
+                <div class="core-symbol">
+                    ×
+                </div>
+
+            </div>
+
+            <span class="center-text">
+                CONNECT
+            </span>
+
+        </div>
+
+
+        <!-- ==========================================
+             BRAND CARD
+        =========================================== -->
+
+        <div class="connection-card brand-card">
+
+            <div class="card-top">
+                <span class="status-dot brand-dot"></span>
+                BRAND
+            </div>
+
+            <div class="brand-avatar">
+                <span>◆</span>
+            </div>
+
+            <h3>
+                BRAND
+            </h3>
+
+            <p>
+                Your vision.
+            </p>
+
+        </div>
+
+
+        <!-- Connection lines -->
+
+        <div class="connection-line line-top"></div>
+        <div class="connection-line line-bottom"></div>
+
+
+    </div>
+
+
+    <!-- Bottom statement -->
+
+    <div class="connection-bottom">
+
+        <div class="bottom-item">
+            <strong>01</strong>
+            <span>DISCOVER</span>
+        </div>
+
+        <div class="bottom-line"></div>
+
+        <div class="bottom-item">
+            <strong>02</strong>
+            <span>CONNECT</span>
+        </div>
+
+        <div class="bottom-line"></div>
+
+        <div class="bottom-item">
+            <strong>03</strong>
+            <span>COLLABORATE</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+    <!-- =====================================================
+         TRUST / BROKER SECTION
+         NexCollab as the secure middleman between
+         brands and creators
+    ===================================================== -->
+
+    <section class="trust-section" id="trustSection">
+
+        <div class="trust-glow"></div>
+
+        <div class="section-heading">
+            <span class="heading-line"></span>
+            <p>THE MIDDLE GROUND</p>
+            <span class="heading-line"></span>
+        </div>
+
+        <div class="trust-heading">
+            <h2>We Sit <span>Between</span> Every Deal.</h2>
+            <p>No awkward DMs, no chasing invoices. NexCollab holds the
+               payment, verifies both sides, and only releases funds
+               when the work is actually done.</p>
+        </div>
+
+        <div class="trust-flow">
+
+            <div class="trust-step">
+                <div class="trust-icon"><i class="fa-solid fa-bullhorn"></i></div>
+                <span class="trust-num">01</span>
+                <h3>Brand Posts Deal</h3>
+                <p>Budget, deliverables and niche are locked in upfront — no surprises later.</p>
+            </div>
+
+            <div class="trust-connector"></div>
+
+            <div class="trust-step">
+                <div class="trust-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <span class="trust-num">02</span>
+                <h3>We Vet Both Sides</h3>
+                <p>Every creator and brand on NexCollab is identity-checked before they can match.</p>
+            </div>
+
+            <div class="trust-connector"></div>
+
+            <div class="trust-step">
+                <div class="trust-icon"><i class="fa-solid fa-lock"></i></div>
+                <span class="trust-num">03</span>
+                <h3>Funds Held in Escrow</h3>
+                <p>Brand payment sits safely with NexCollab the moment a deal is confirmed.</p>
+            </div>
+
+            <div class="trust-connector"></div>
+
+            <div class="trust-step">
+                <div class="trust-icon"><i class="fa-solid fa-circle-check"></i></div>
+                <span class="trust-num">04</span>
+                <h3>Content Delivered → Paid</h3>
+                <p>Creator delivers, brand approves, payout releases automatically. Done.</p>
+            </div>
+
+        </div>
+
+        <div class="trust-badges">
+            <div class="badge-pill"><i class="fa-solid fa-shield"></i> Escrow Protected</div>
+            <div class="badge-pill"><i class="fa-solid fa-user-check"></i> Verified Profiles Only</div>
+            <div class="badge-pill"><i class="fa-solid fa-scale-balanced"></i> Fair Dispute Resolution</div>
+            <div class="badge-pill"><i class="fa-solid fa-headset"></i> 24/7 Human Support</div>
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         LIVE CAMPAIGNS SECTION
+         Mock "live" activity feed — no external media used,
+         everything below is generated with CSS/SVG only
+    ===================================================== -->
+
+    <section class="live-section" id="liveSection">
+
+        <div class="section-heading">
+            <span class="heading-line"></span>
+            <p>HAPPENING RIGHT NOW</p>
+            <span class="heading-line"></span>
+        </div>
+
+        <div class="live-heading">
+            <h2>Deals Closing <span>Live.</span></h2>
+            <p>A real-time pulse of collaborations being matched, negotiated and shipped on NexCollab.</p>
+        </div>
+
+        <div class="live-grid">
+
+            <div class="live-card">
+                <div class="live-thumb thumb-beauty">
+                    <div class="live-badge"><span class="live-dot"></span> LIVE</div>
+                    <div class="live-viewers"><i class="fa-solid fa-eye"></i> <span class="viewer-count" data-base="482">482</span></div>
+                    <i class="fa-solid fa-wand-magic-sparkles thumb-icon"></i>
+                </div>
+                <div class="live-info">
+                    <div class="live-avatar av-beauty">✦</div>
+                    <div>
+                        <h4>Glow & Co × @mira.creates</h4>
+                        <span>Beauty • Deal negotiating</span>
+                    </div>
+                </div>
+                <div class="live-progress"><div class="live-progress-fill" style="width:64%"></div></div>
+            </div>
+
+            <div class="live-card">
+                <div class="live-thumb thumb-tech">
+                    <div class="live-badge"><span class="live-dot"></span> LIVE</div>
+                    <div class="live-viewers"><i class="fa-solid fa-eye"></i> <span class="viewer-count" data-base="915">915</span></div>
+                    <i class="fa-solid fa-laptop-code thumb-icon"></i>
+                </div>
+                <div class="live-info">
+                    <div class="live-avatar av-tech">⌁</div>
+                    <div>
+                        <h4>Nexa Devices × @tech.tarun</h4>
+                        <span>Tech • Content in review</span>
+                    </div>
+                </div>
+                <div class="live-progress"><div class="live-progress-fill" style="width:88%"></div></div>
+            </div>
+
+            <div class="live-card">
+                <div class="live-thumb thumb-fitness">
+                    <div class="live-badge"><span class="live-dot"></span> LIVE</div>
+                    <div class="live-viewers"><i class="fa-solid fa-eye"></i> <span class="viewer-count" data-base="337">337</span></div>
+                    <i class="fa-solid fa-dumbbell thumb-icon"></i>
+                </div>
+                <div class="live-info">
+                    <div class="live-avatar av-fitness">◆</div>
+                    <div>
+                        <h4>FitFuel × @coach.ananya</h4>
+                        <span>Fitness • Escrow funded</span>
+                    </div>
+                </div>
+                <div class="live-progress"><div class="live-progress-fill" style="width:32%"></div></div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         TRUST STATS BAR
+    ===================================================== -->
+
+    <section class="stats-section" id="statsSection">
+
+        <div class="stat-item">
+            <h3 class="stat-num" data-target="12000">0</h3>
+            <span>Creators Onboard</span>
+        </div>
+
+        <div class="stat-divider"></div>
+
+        <div class="stat-item">
+            <h3 class="stat-num" data-target="3400">0</h3>
+            <span>Brands Partnered</span>
+        </div>
+
+        <div class="stat-divider"></div>
+
+        <div class="stat-item">
+            <h3 class="stat-num" data-target="98" data-suffix="%">0</h3>
+            <span>Payout Success Rate</span>
+        </div>
+
+        <div class="stat-divider"></div>
+
+        <div class="stat-item">
+            <h3 class="stat-num" data-target="24" data-suffix="/7">0</h3>
+            <span>Support Coverage</span>
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-top">
+
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon"><span></span><span></span></div>
+                    <span class="logo-text">Nex<span>Collab</span></span>
+                </a>
+                <p>The trusted middle ground between brands and creators.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Platform</h4>
+                <a href="#">Find Creators</a>
+                <a href="#">Find Brands</a>
+                <a href="#howItWorks">How It Works</a>
+                <a href="#">Pricing</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="#">About</a>
+                <a href="#">Careers</a>
+                <a href="#">Blog</a>
+                <a href="#">Contact</a>
+            </div>
+
+            <div class="footer-col footer-contact">
+                <h4>Get In Touch</h4>
+
+                <a href="mailto:jayyjadhao@gmail.com" class="footer-contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>jayyjadhao@gmail.com</span>
+                </a>
+
+                <a href="tel:+917558750730" class="footer-contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+91 75587 50730</span>
+                </a>
+
+                <div class="footer-contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>India</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-stats">
+
+            <div class="footer-stat">
+                <div class="footer-stat-icon"><i class="fa-solid fa-users"></i></div>
+                <div>
+                    <h3 class="stat-num" data-target="12000" data-suffix="+">0</h3>
+                    <span>Creators Onboard</span>
+                </div>
+            </div>
+
+            <div class="footer-stat">
+                <div class="footer-stat-icon"><i class="fa-solid fa-briefcase"></i></div>
+                <div>
+                    <h3 class="stat-num" data-target="3400" data-suffix="+">0</h3>
+                    <span>Brands Partnered</span>
+                </div>
+            </div>
+
+            <div class="footer-stat">
+                <div class="footer-stat-icon"><i class="fa-solid fa-circle-check"></i></div>
+                <div>
+                    <h3 class="stat-num" data-target="98" data-suffix="%">0</h3>
+                    <span>Payout Success Rate</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 NexCollab. All rights reserved.</span>
+            <div class="footer-socials">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================
+         BACK TO TOP
+    ========================================== -->
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+
+    <!-- Font Awesome (icons only — no external images/photos used) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" crossorigin="anonymous"></script>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>

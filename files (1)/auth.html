@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Mobile responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login or Sign Up — NexCollab</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="auth.css">
+</head>
+
+<body class="auth-body">
+
+    <!-- =========================================
+         NAVBAR (Home + Logo only)
+    ========================================== -->
+
+    <header class="navbar-wrapper">
+
+        <nav class="navbar">
+
+            <!-- Logo → always goes home -->
+            <a href="index.html" class="logo">
+
+                <div class="logo-icon">
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <span class="logo-text">
+                    Nex<span>Collab</span>
+                </span>
+
+            </a>
+
+            <!-- Right side: back to home -->
+            <div class="nav-actions">
+
+                <a href="index.html" class="auth-home-link">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Home</span>
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================================
+         3D BACKGROUND (same as home page)
+    ========================================== -->
+
+    <div class="background">
+        <div class="orb orb-one"></div>
+        <div class="orb orb-two"></div>
+        <div class="glass-shape shape-one"></div>
+        <div class="glass-shape shape-two"></div>
+        <div id="particles"></div>
+    </div>
+
+
+    <!-- =========================================
+         AUTH SECTION
+    ========================================== -->
+
+    <main class="auth-main">
+
+        <div class="auth-wrapper">
+
+            <!-- Left promo panel -->
+            <div class="auth-promo">
+
+                <div class="badge">
+                    <span class="badge-dot"></span>
+                    The future of creator collaboration
+                </div>
+
+                <h1>Join the platform<br><span>brands & creators</span> trust.</h1>
+
+                <p>One account. Escrow-protected payouts, verified profiles,
+                   and campaigns matched to exactly what you're good at.</p>
+
+                <div class="auth-promo-points">
+
+                    <div class="auth-point">
+                        <div class="auth-point-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div>
+                            <strong>Escrow Protected</strong>
+                            <span>Funds held safely until work is delivered</span>
+                        </div>
+                    </div>
+
+                    <div class="auth-point">
+                        <div class="auth-point-icon"><i class="fa-solid fa-user-check"></i></div>
+                        <div>
+                            <strong>Verified Profiles Only</strong>
+                            <span>Every brand and creator is identity-checked</span>
+                        </div>
+                    </div>
+
+                    <div class="auth-point">
+                        <div class="auth-point-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <div>
+                            <strong>Fast Matching</strong>
+                            <span>Get discovered or find your fit in minutes</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="auth-promo-stats">
+                    <div><strong>12,000+</strong><span>Creators</span></div>
+                    <div><strong>3,400+</strong><span>Brands</span></div>
+                    <div><strong>98%</strong><span>Payout Success</span></div>
+                </div>
+
+            </div>
+
+
+            <!-- Right auth card -->
+            <div class="auth-card">
+
+                <!-- Tabs -->
+                <div class="auth-tabs">
+                    <button class="auth-tab active" id="tabLogin" type="button">Log In</button>
+                    <button class="auth-tab" id="tabSignup" type="button">Sign Up</button>
+                    <div class="auth-tab-indicator" id="authTabIndicator"></div>
+                </div>
+
+                <!-- ============ LOGIN FORM ============ -->
+                <form class="auth-form active" id="loginForm">
+
+                    <h2>Welcome back</h2>
+                    <p class="auth-sub">Log in to manage your campaigns and collabs.</p>
+
+                    <label class="auth-field">
+                        <span>Email address</span>
+                        <div class="auth-input">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" placeholder="you@email.com" required>
+                        </div>
+                    </label>
+
+                    <label class="auth-field">
+                        <span>Password</span>
+                        <div class="auth-input">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" placeholder="Enter your password" required>
+                            <button type="button" class="auth-eye" data-target="loginForm"><i class="fa-solid fa-eye"></i></button>
+                        </div>
+                    </label>
+
+                    <div class="auth-row">
+                        <label class="auth-check">
+                            <input type="checkbox">
+                            <span>Remember me</span>
+                        </label>
+                        <a href="#" class="auth-forgot">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="auth-submit">
+                        Log In
+                        <span>→</span>
+                    </button>
+
+                    <div class="auth-divider"><span>or continue with</span></div>
+
+                    <div class="auth-social">
+                        <button type="button" class="auth-social-btn"><i class="fa-brands fa-google"></i> Google</button>
+                        <button type="button" class="auth-social-btn"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</button>
+                    </div>
+
+                    <p class="auth-switch">Don't have an account? <a href="#" class="switchToSignup">Sign up</a></p>
+
+                </form>
+
+                <!-- ============ SIGN UP FORM ============ -->
+                <form class="auth-form" id="signupForm">
+
+                    <h2>Create your account</h2>
+                    <p class="auth-sub">Join as a brand or a creator — takes under a minute.</p>
+
+                    <div class="auth-role">
+                        <button type="button" class="auth-role-btn active" data-role="creator">
+                            <i class="fa-solid fa-star"></i>
+                            <span>I'm a Creator</span>
+                        </button>
+                        <button type="button" class="auth-role-btn" data-role="brand">
+                            <i class="fa-solid fa-briefcase"></i>
+                            <span>I'm a Brand</span>
+                        </button>
+                    </div>
+
+                    <label class="auth-field">
+                        <span>Full name</span>
+                        <div class="auth-input">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" placeholder="Your name" required>
+                        </div>
+                    </label>
+
+                    <label class="auth-field">
+                        <span>Email address</span>
+                        <div class="auth-input">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" placeholder="you@email.com" required>
+                        </div>
+                    </label>
+
+                    <label class="auth-field">
+                        <span>Password</span>
+                        <div class="auth-input">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" placeholder="Create a password" required>
+                            <button type="button" class="auth-eye" data-target="signupForm"><i class="fa-solid fa-eye"></i></button>
+                        </div>
+                    </label>
+
+                    <label class="auth-check auth-terms">
+                        <input type="checkbox" required>
+                        <span>I agree to the <a href="#">Terms</a> & <a href="#">Privacy Policy</a></span>
+                    </label>
+
+                    <button type="submit" class="auth-submit">
+                        Create Account
+                        <span>→</span>
+                    </button>
+
+                    <div class="auth-divider"><span>or continue with</span></div>
+
+                    <div class="auth-social">
+                        <button type="button" class="auth-social-btn"><i class="fa-brands fa-google"></i> Google</button>
+                        <button type="button" class="auth-social-btn"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</button>
+                    </div>
+
+                    <p class="auth-switch">Already have an account? <a href="#" class="switchToLogin">Log in</a></p>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" crossorigin="anonymous"></script>
+
+    <!-- JavaScript -->
+    <script src="auth.js"></script>
+
+</body>
+</html>
