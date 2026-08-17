@@ -153,7 +153,7 @@ document.querySelectorAll(".auth-eye").forEach((btn) => {
    FORM SUBMIT — REAL BACKEND CONNECTION
 ========================================= */
 
-const API_URL = "http://localhost:3000/api/auth";
+const API_URL = "https://nexcollabweb.vercel.app/api/auth";
 
 // ===== SIGNUP FORM =====
 if (signupForm) {
