@@ -223,6 +223,10 @@ app.get("/api/creators", async (req, res) => {
     }
 });
 
-app.listen(PORT, () => {
-    console.log(`Server chal raha hai: http://localhost:${PORT}`);
-});
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(PORT, () => {
+        console.log(`Server chal raha hai: http://localhost:${PORT}`);
+    });
+}
+
+module.exports = app;
