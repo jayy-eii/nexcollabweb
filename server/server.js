@@ -5,35 +5,12 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("./models/User");
 const cors = require("cors");
-const multer = require("multer");
-const path = require("path");
-const fs = require("fs");
 
 const app = express();
 const PORT = 3000;
 app.use(cors());
 
 app.use(express.json());
-const uploadDir = path.join(__dirname, "uploads");
-if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir);
-app.use("/uploads", express.static(uploadDir));
-
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => cb(null, uploadDir),
-    filename: (req, file, cb) => {
-        const unique = Date.now() + "-" + Math.round(Math.random() * 1e9);
-        cb(null, unique + path.extname(file.originalname));
-    }
-});
-
-const upload = multer({
-    storage,
-    limits: { fileSize: 5 * 1024 * 1024 },
-    fileFilter: (req, file, cb) => {
-        if (file.mimetype.startsWith("image/")) cb(null, true);
-        else cb(new Error("Sirf image files allowed hain"));
-    }
-});
 
 mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log("MongoDB connected ✅"))
@@ -130,21 +107,6 @@ function verifyToken(req, res, next) {
     }
 
 }
-// ===== UPLOAD IMAGES (avatar or portfolio) =====
-app.post("/api/upload", verifyToken, upload.array("files", 6), (req, res) => {
-    try {
-        if (!req.files || req.files.length === 0) {
-            return res.status(400).json({ message: "Koi file nahi mili" });
-        }
-        const urls = req.files.map(
-            (f) => `${req.protocol}://${req.get("host")}/uploads/${f.filename}`
-        );
-        res.status(200).json({ urls });
-    } catch (error) {
-        console.log(error);
-        res.status(500).json({ message: "Upload fail ho gaya" });
-    }
-});
 
 // ===== GET MY PROFILE =====
 app.get("/api/profile/me", verifyToken, async (req, res) => {
