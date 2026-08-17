@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Mobile responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Find Creators — NexCollab</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="creators.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         NAVBAR (same as home page)
+    ========================================== -->
+
+    <header class="navbar-wrapper">
+
+        <nav class="navbar">
+
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <span></span>
+                    <span></span>
+                </div>
+                <span class="logo-text">
+                    Nex<span>Collab</span>
+                </span>
+            </a>
+
+            <div class="nav-links">
+
+                <div class="nav-item dropdown">
+                    <a href="creators.html" class="nav-link">
+                        Discover
+                        <span class="arrow">⌄</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="creators.html">
+                            <div class="drop-icon">✦</div>
+                            <div>
+                                <strong>Find Creators</strong>
+                                <small>Discover influencers</small>
+                            </div>
+                        </a>
+                        <a href="creators.html?sort=trending">
+                            <div class="drop-icon">↗</div>
+                            <div>
+                                <strong>Trending Creators</strong>
+                                <small>See what's trending</small>
+                            </div>
+                        </a>
+                        <a href="creators.html#filters">
+                            <div class="drop-icon">◈</div>
+                            <div>
+                                <strong>Categories</strong>
+                                <small>Explore by niche</small>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link">
+                        For Brands
+                        <span class="arrow">⌄</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="creators.html">
+                            <div class="drop-icon">◉</div>
+                            <div>
+                                <strong>Find Influencers</strong>
+                                <small>Find your perfect match</small>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="drop-icon">＋</div>
+                            <div>
+                                <strong>Create Campaign</strong>
+                                <small>Launch your campaign</small>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="drop-icon">▣</div>
+                            <div>
+                                <strong>Dashboard</strong>
+                                <small>Manage campaigns</small>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link">
+                        For Creators
+                        <span class="arrow">⌄</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="#">
+                            <div class="drop-icon">✧</div>
+                            <div>
+                                <strong>Brand Deals</strong>
+                                <small>Find opportunities</small>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="drop-icon">◎</div>
+                            <div>
+                                <strong>Creator Profile</strong>
+                                <small>Build your profile</small>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="drop-icon">⚡</div>
+                            <div>
+                                <strong>Opportunities</strong>
+                                <small>Discover new deals</small>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <a href="index.html#howItWorks" class="nav-link">
+                    How It Works
+                </a>
+
+            </div>
+
+            <div class="nav-actions">
+
+                <div id="navAuthButtons">
+                    <a href="auth.html" class="login-btn">Login</a>
+                    <a href="auth.html" class="start-btn">
+                        <span>Get Started</span>
+                        <span class="start-arrow">→</span>
+                    </a>
+                </div>
+
+                <div id="navUserMenu" class="nav-user-menu" style="display:none;">
+                    <a href="profile.html" class="nav-user-link">
+                        <div class="nav-user-avatar" id="navUserAvatar"></div>
+                        <span id="navUserName" class="nav-user-name"></span>
+                    </a>
+                    <button id="navLogoutBtn" class="nav-logout-btn">Logout</button>
+                </div>
+
+            </div>
+
+            <button class="menu-btn" id="menuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================================
+         3D BACKGROUND
+    ========================================== -->
+
+    <div class="background">
+        <div class="orb orb-one"></div>
+        <div class="orb orb-two"></div>
+        <div class="glass-shape shape-one"></div>
+        <div class="glass-shape shape-two"></div>
+        <div id="particles"></div>
+    </div>
+
+
+    <!-- =========================================
+         FIND CREATORS
+    ========================================== -->
+
+    <main class="creators-main">
+
+        <div class="creators-header">
+
+            <div class="badge">
+                <span class="badge-dot"></span>
+                12,000+ verified creators
+            </div>
+
+            <h1>Find your perfect <span>creator match.</span></h1>
+
+            <p>Search and filter by niche, followers, and engagement to find
+               creators who fit your brand — every profile is identity-verified.</p>
+
+            <div class="creators-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="creatorSearchInput" placeholder="Search by name, handle, or niche...">
+                <button type="button" class="creators-search-btn" id="creatorSearchBtn">Search</button>
+            </div>
+
+        </div>
+
+        <div class="creators-filters" id="filters">
+            <button class="filter-chip active" data-category="all">All</button>
+            <button class="filter-chip" data-category="beauty"><i class="fa-solid fa-wand-magic-sparkles"></i> Beauty</button>
+            <button class="filter-chip" data-category="fashion"><i class="fa-solid fa-shirt"></i> Fashion</button>
+            <button class="filter-chip" data-category="fitness"><i class="fa-solid fa-dumbbell"></i> Fitness</button>
+            <button class="filter-chip" data-category="tech"><i class="fa-solid fa-laptop-code"></i> Tech</button>
+            <button class="filter-chip" data-category="food"><i class="fa-solid fa-utensils"></i> Food</button>
+            <button class="filter-chip" data-category="travel"><i class="fa-solid fa-plane"></i> Travel</button>
+            <button class="filter-chip" data-category="gaming"><i class="fa-solid fa-gamepad"></i> Gaming</button>
+        </div>
+
+        <div class="creators-meta">
+            <div class="creators-count">
+                Showing <strong id="creatorsShowingCount">0</strong> of <strong id="creatorsTotalCount">0</strong> creators
+            </div>
+            <div class="creators-sort">
+                <span>Sort by</span>
+                <select id="creatorSortSelect">
+                    <option value="followers">Most Followers</option>
+                    <option value="newest">Newest Profiles</option>
+                    <option value="name">Name A–Z</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="creators-grid" id="creatorsGrid"></div>
+
+        <div class="creators-empty" id="creatorsEmpty">
+            <i class="fa-solid fa-user-magnifying-glass"></i>
+            <h3>No creators found</h3>
+            <p>Try a different search term or clear your filters to see more results.</p>
+        </div>
+
+        <div class="creators-load-more">
+            <button class="load-more-btn" id="loadMoreBtn">Load More Creators</button>
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER (same as home page)
+    ===================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-top">
+
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon"><span></span><span></span></div>
+                    <span class="logo-text">Nex<span>Collab</span></span>
+                </a>
+                <p>The trusted middle ground between brands and creators.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Platform</h4>
+                <a href="creators.html">Find Creators</a>
+                <a href="#">Find Brands</a>
+                <a href="index.html#howItWorks">How It Works</a>
+                <a href="#">Pricing</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="#">About</a>
+                <a href="#">Careers</a>
+                <a href="#">Blog</a>
+                <a href="#">Contact</a>
+            </div>
+
+            <div class="footer-col footer-contact">
+                <h4>Get In Touch</h4>
+
+                <a href="mailto:jayyjadhao@gmail.com" class="footer-contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>jayyjadhao@gmail.com</span>
+                </a>
+
+                <a href="tel:+917558750730" class="footer-contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+91 75587 50730</span>
+                </a>
+
+                <div class="footer-contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>India</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 NexCollab. All rights reserved.</span>
+            <div class="footer-socials">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+
+    </footer>
+
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" crossorigin="anonymous"></script>
+
+    <!-- JavaScript -->
+    <script src="creators.js"></script>
+
+</body>
+</html>

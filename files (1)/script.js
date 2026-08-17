@@ -436,6 +436,32 @@ connectionCards.forEach(
 /* NOTE: initial call moved to kickConnectionLerp() at the
    bottom of this file, alongside the lerp-smoothed scroll setup. */
 
+   /* =========================================
+   FETCH REAL CREATORS COUNT FOR STATS
+========================================= */
+
+async function loadCreatorsCount() {
+
+    try {
+
+        const res = await fetch("http://localhost:3000/api/creators");
+        const data = await res.json();
+        const count = (data.creators || []).length +12;
+
+        document.querySelectorAll(
+            "#creatorsCountStat, #creatorsCountStatFooter"
+        ).forEach((el) => {
+            el.setAttribute("data-target", count);
+        });
+
+    } catch (error) {
+        console.log("Creators count fetch fail ❌", error);
+    }
+
+}
+
+loadCreatorsCount();
+
 /* =========================================
    STAT COUNT-UP ON SCROLL INTO VIEW
 ========================================= */
@@ -788,6 +814,37 @@ if (navLogoutBtn) {
 
         window.location.reload();
 
+    });
+
+}
+/* =========================================
+   HERO VISUAL — 3D TILT ON MOUSE MOVE
+========================================= */
+
+const heroVisual = document.getElementById("heroVisual");
+const heroVisualImg = document.getElementById("heroVisualImg");
+
+if (heroVisual && heroVisualImg) {
+
+    heroVisual.addEventListener("mousemove", (e) => {
+
+        const rect = heroVisual.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateY = ((x - centerX) / centerX) * 10;
+        const rotateX = ((centerY - y) / centerY) * 10;
+
+        heroVisualImg.style.transform =
+            `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
+
+    });
+
+    heroVisual.addEventListener("mouseleave", () => {
+        heroVisualImg.style.transform = "rotateX(0deg) rotateY(0deg) scale(1)";
     });
 
 }

@@ -1,0 +1,553 @@
+/* =====================================================
+   FIND CREATORS PAGE
+   Matches the NexCollab glass + gradient theme
+===================================================== */
+
+.creators-main {
+    position: relative;
+    padding: 150px 24px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   PAGE HEADER
+========================================= */
+
+.creators-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 40px;
+
+    opacity: 0;
+    transform: translateY(18px);
+    animation: creatorsFadeIn 0.7s ease forwards 0.1s;
+}
+
+@keyframes creatorsFadeIn {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.creators-header h1 {
+    margin-top: 18px;
+    font-size: 38px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+    line-height: 1.2;
+}
+
+.creators-header h1 span {
+    background: linear-gradient(90deg, #61f4ff, #9a6cff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.creators-header p {
+    margin-top: 14px;
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+
+/* =========================================
+   SEARCH BAR
+========================================= */
+
+.creators-search {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    max-width: 560px;
+    margin: 30px auto 0;
+    padding: 4px 4px 4px 20px;
+
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+
+    transition: 0.25s ease;
+}
+
+.creators-search:focus-within {
+    border-color: rgba(139, 92, 246, 0.55);
+    background: rgba(139, 92, 246, 0.06);
+    box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.12);
+}
+
+.creators-search i {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.creators-search input {
+    flex: 1;
+    min-width: 0;
+
+    padding: 15px 0;
+
+    background: transparent;
+    border: 0;
+    outline: none;
+
+    font-family: inherit;
+    font-size: 14px;
+    color: white;
+}
+
+.creators-search input::placeholder {
+    color: rgba(255, 255, 255, 0.28);
+}
+
+.creators-search-btn {
+    flex-shrink: 0;
+
+    padding: 12px 22px;
+
+    border: 0;
+    border-radius: 12px;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    color: white;
+
+    background: linear-gradient(135deg, #7c3aed, #9333ea, #4f46e5);
+    box-shadow: 0 8px 22px rgba(124, 58, 237, 0.3);
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.creators-search-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 28px rgba(124, 58, 237, 0.45);
+}
+
+
+/* =========================================
+   FILTER CHIPS
+========================================= */
+
+.creators-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    margin-top: 26px;
+
+    opacity: 0;
+    transform: translateY(18px);
+    animation: creatorsFadeIn 0.7s ease forwards 0.22s;
+}
+
+.filter-chip {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 9px 16px;
+
+    border-radius: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.03);
+
+    font-family: inherit;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6);
+
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.filter-chip:hover {
+    border-color: rgba(255, 255, 255, 0.25);
+    color: white;
+}
+
+.filter-chip.active {
+    color: white;
+    border-color: rgba(139, 92, 246, 0.55);
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.32), rgba(37, 99, 235, 0.22));
+    box-shadow: 0 6px 18px rgba(124, 58, 237, 0.25);
+}
+
+
+/* =========================================
+   RESULTS META BAR
+========================================= */
+
+.creators-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    margin: 40px 0 22px;
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.creators-count {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.creators-count strong {
+    color: white;
+}
+
+.creators-sort {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 12.5px;
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.creators-sort select {
+    padding: 9px 14px;
+
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.03);
+
+    font-family: inherit;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: white;
+
+    cursor: pointer;
+    outline: none;
+}
+
+.creators-sort select option {
+    background: #12121c;
+    color: white;
+}
+
+
+/* =========================================
+   CREATORS GRID
+========================================= */
+
+.creators-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.creator-tile {
+    position: relative;
+    overflow: hidden;
+
+    padding: 26px 22px;
+
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px);
+
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.creator-tile.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.creator-tile:hover {
+    border-color: rgba(139, 92, 246, 0.4);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+    transform: translateY(-4px);
+}
+
+.creator-tile-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.creator-tile-id {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.creator-tile-avatar {
+    flex-shrink: 0;
+    position: relative;
+
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    font-size: 18px;
+    font-weight: 800;
+    color: white;
+}
+
+.creator-tile-verified {
+    position: absolute;
+    bottom: -3px;
+    right: -3px;
+
+    width: 17px;
+    height: 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: #0a0a11;
+
+    font-size: 9px;
+    color: #61f4ff;
+}
+
+.creator-tile-id h4 {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.creator-tile-id span {
+    display: block;
+    margin-top: 2px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.42);
+}
+
+.creator-tile-niche {
+    flex-shrink: 0;
+
+    padding: 5px 11px;
+
+    border-radius: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.04);
+
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    color: rgba(255, 255, 255, 0.6);
+    white-space: nowrap;
+}
+
+.creator-tile-bio {
+    margin-top: 16px;
+
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.48);
+
+    min-height: 40px;
+}
+
+.creator-tile-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+
+    margin-top: 18px;
+    padding: 14px 0;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.creator-tile-stats div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    text-align: center;
+}
+
+.creator-tile-stats strong {
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.creator-tile-stats span {
+    font-size: 10px;
+    letter-spacing: 0.3px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.creator-tile-actions {
+    display: flex;
+    gap: 10px;
+
+    margin-top: 18px;
+}
+
+.creator-tile-actions button {
+    flex: 1;
+
+    padding: 11px 0;
+
+    border-radius: 11px;
+
+    font-family: inherit;
+    font-size: 12.5px;
+    font-weight: 700;
+
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.creator-view-btn {
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.03);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.creator-view-btn:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    color: white;
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.creator-invite-btn {
+    border: 0;
+    color: white;
+    background: linear-gradient(135deg, #7c3aed, #9333ea, #4f46e5);
+    box-shadow: 0 8px 20px rgba(124, 58, 237, 0.28);
+}
+
+.creator-invite-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 26px rgba(124, 58, 237, 0.45);
+}
+
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.creators-empty {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.creators-empty.visible {
+    display: flex;
+}
+
+.creators-empty i {
+    font-size: 34px;
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.creators-empty h3 {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.creators-empty p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.42);
+    max-width: 320px;
+}
+
+
+/* =========================================
+   LOAD MORE
+========================================= */
+
+.creators-load-more {
+    display: flex;
+    justify-content: center;
+    margin-top: 36px;
+}
+
+.load-more-btn {
+    padding: 13px 30px;
+
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.03);
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    color: white;
+
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.load-more-btn:hover {
+    border-color: rgba(139, 92, 246, 0.5);
+    background: rgba(139, 92, 246, 0.08);
+    transform: translateY(-2px);
+}
+
+.load-more-btn:disabled {
+    opacity: 0.4;
+    cursor: default;
+    transform: none;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 980px) {
+    .creators-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 680px) {
+
+    .creators-main { padding: 130px 16px 40px; }
+
+    .creators-header h1 { font-size: 28px; }
+
+    .creators-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .creators-search {
+        flex-wrap: wrap;
+        padding: 14px 16px;
+        border-radius: 18px;
+    }
+
+    .creators-search input { padding: 6px 0; }
+
+    .creators-search-btn { width: 100%; }
+
+    .creators-meta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}

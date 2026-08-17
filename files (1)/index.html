@@ -56,14 +56,14 @@
                 <!-- Discover dropdown -->
                 <div class="nav-item dropdown">
 
-                    <a href="#" class="nav-link">
+                    <a href="creators.html" class="nav-link">
                         Discover
                         <span class="arrow">⌄</span>
                     </a>
 
                     <div class="dropdown-menu">
 
-                        <a href="#">
+                        <a href="creators.html">
                             <div class="drop-icon">✦</div>
                             <div>
                                 <strong>Find Creators</strong>
@@ -71,7 +71,7 @@
                             </div>
                         </a>
 
-                        <a href="#">
+                        <a href="creators.html?sort=trending">
                             <div class="drop-icon">↗</div>
                             <div>
                                 <strong>Trending Creators</strong>
@@ -79,7 +79,7 @@
                             </div>
                         </a>
 
-                        <a href="#">
+                        <a href="creators.html#filters">
                             <div class="drop-icon">◈</div>
                             <div>
                                 <strong>Categories</strong>
@@ -102,7 +102,7 @@
 
                     <div class="dropdown-menu">
 
-                        <a href="#">
+                        <a href="creators.html">
                             <div class="drop-icon">◉</div>
                             <div>
                                 <strong>Find Influencers</strong>
@@ -149,7 +149,7 @@
                             </div>
                         </a>
 
-                        <a href="#">
+                        <a href="profile.html">
                             <div class="drop-icon">◎</div>
                             <div>
                                 <strong>Creator Profile</strong>
@@ -190,8 +190,10 @@
     </div>
 
     <div id="navUserMenu" class="nav-user-menu" style="display:none;">
-        <div class="nav-user-avatar" id="navUserAvatar"></div>
-        <span id="navUserName" class="nav-user-name"></span>
+        <a href="profile.html" class="nav-user-link">
+            <div class="nav-user-avatar" id="navUserAvatar"></div>
+            <span id="navUserName" class="nav-user-name"></span>
+        </a>
         <button id="navLogoutBtn" class="nav-logout-btn">Logout</button>
     </div>
 
@@ -239,36 +241,45 @@
          Replace this with your actual website hero
     ========================================== -->
 
-    <main class="hero">
+   <main class="hero">
 
-        <div class="hero-content">
+        <div class="hero-grid">
 
-            <div class="badge">
-                <span class="badge-dot"></span>
-                The future of creator collaboration
+            <div class="hero-content">
+
+                <div class="badge">
+                    <span class="badge-dot"></span>
+                    The future of creator collaboration
+                </div>
+
+                <h1>
+                    Where Brands
+                    <span>Meet Creators.</span>
+                </h1>
+
+                <p>
+                    NexCollab connects ambitious brands with the right
+                    creators to build meaningful campaigns and grow together.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="auth.html" target="_blank" rel="noopener" class="hero-primary">
+                        Start Collaborating
+                        <span>→</span>
+                    </a>
+
+                    <a href="creators.html" class="hero-secondary">
+                        Explore Creators
+                    </a>
+
+                </div>
+
             </div>
 
-            <h1>
-                Where Brands
-                <span>Meet Creators.</span>
-            </h1>
-
-            <p>
-                NexCollab connects ambitious brands with the right
-                creators to build meaningful campaigns and grow together.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="auth.html" target="_blank" rel="noopener" class="hero-primary">
-                    Start Collaborating
-                    <span>→</span>
-                </a>
-
-                <a href="#" class="hero-secondary">
-                    Explore Creators
-                </a>
-
+            <div class="hero-visual" id="heroVisual">
+                <div class="hero-visual-glow"></div>
+               <img src="hero-social.png" alt="Creators collaborating with brands on social media" id="heroVisualImg">
             </div>
 
         </div>
@@ -886,34 +897,12 @@
 
     <section class="stats-section" id="statsSection">
 
-        <div class="stat-item">
-            <h3 class="stat-num" data-target="12000">0</h3>
-            <span>Creators Onboard</span>
-        </div>
+    <div class="stat-item">
+        <h3 class="stat-num" data-target="0" id="creatorsCountStat">0</h3>
+        <span>Creators Onboard</span>
+    </div>
 
-        <div class="stat-divider"></div>
-
-        <div class="stat-item">
-            <h3 class="stat-num" data-target="3400">0</h3>
-            <span>Brands Partnered</span>
-        </div>
-
-        <div class="stat-divider"></div>
-
-        <div class="stat-item">
-            <h3 class="stat-num" data-target="98" data-suffix="%">0</h3>
-            <span>Payout Success Rate</span>
-        </div>
-
-        <div class="stat-divider"></div>
-
-        <div class="stat-item">
-            <h3 class="stat-num" data-target="24" data-suffix="/7">0</h3>
-            <span>Support Coverage</span>
-        </div>
-
-    </section>
-
+</section>
 
     <!-- =====================================================
          FOOTER
@@ -933,7 +922,7 @@
 
             <div class="footer-col">
                 <h4>Platform</h4>
-                <a href="#">Find Creators</a>
+                <a href="creators.html">Find Creators</a>
                 <a href="#">Find Brands</a>
                 <a href="#howItWorks">How It Works</a>
                 <a href="#">Pricing</a>
@@ -970,31 +959,15 @@
 
         <div class="footer-stats">
 
-            <div class="footer-stat">
-                <div class="footer-stat-icon"><i class="fa-solid fa-users"></i></div>
-                <div>
-                    <h3 class="stat-num" data-target="12000" data-suffix="+">0</h3>
-                    <span>Creators Onboard</span>
-                </div>
-            </div>
-
-            <div class="footer-stat">
-                <div class="footer-stat-icon"><i class="fa-solid fa-briefcase"></i></div>
-                <div>
-                    <h3 class="stat-num" data-target="3400" data-suffix="+">0</h3>
-                    <span>Brands Partnered</span>
-                </div>
-            </div>
-
-            <div class="footer-stat">
-                <div class="footer-stat-icon"><i class="fa-solid fa-circle-check"></i></div>
-                <div>
-                    <h3 class="stat-num" data-target="98" data-suffix="%">0</h3>
-                    <span>Payout Success Rate</span>
-                </div>
-            </div>
-
+    <div class="footer-stat">
+        <div class="footer-stat-icon"><i class="fa-solid fa-users"></i></div>
+        <div>
+            <h3 class="stat-num" data-target="0" data-suffix="+" id="creatorsCountStatFooter">0</h3>
+            <span>Creators Onboard</span>
         </div>
+    </div>
+
+</div>
 
         <div class="footer-bottom">
             <span>© 2026 NexCollab. All rights reserved.</span>

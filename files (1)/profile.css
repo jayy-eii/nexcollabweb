@@ -1,0 +1,449 @@
+/* =====================================================
+   CREATE / EDIT PROFILE PAGE
+   Matches the NexCollab glass + gradient theme
+===================================================== */
+
+.profile-main {
+    position: relative;
+    padding: 150px 24px 60px;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.profile-loading {
+    text-align: center;
+    padding: 100px 20px;
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 14px;
+}
+
+.profile-loading i {
+    display: block;
+    font-size: 26px;
+    margin-bottom: 14px;
+    color: #9a6cff;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.profile-top {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+
+    margin-bottom: 34px;
+
+    opacity: 0;
+    transform: translateY(18px);
+    animation: profileFadeIn 0.6s ease forwards 0.1s;
+}
+
+@keyframes profileFadeIn {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.profile-avatar-preview {
+    flex-shrink: 0;
+    position: relative;
+
+    width: 84px;
+    height: 84px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 22px;
+
+    background: linear-gradient(135deg, #7c3aed, #a855f7 50%, #3b82f6);
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.35);
+
+    font-size: 28px;
+    font-weight: 800;
+    color: white;
+
+    overflow: hidden;
+}
+
+.profile-avatar-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-top h1 {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.profile-top p {
+    margin-top: 5px;
+    font-size: 13.5px;
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.profile-role-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    margin-top: 8px;
+    padding: 5px 12px;
+
+    border-radius: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.04);
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    color: #9a6cff;
+    text-transform: uppercase;
+}
+
+
+/* =========================================
+   FORM CARD
+========================================= */
+
+.profile-card {
+    padding: 36px 36px 40px;
+
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(25px);
+
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.4);
+
+    opacity: 0;
+    transform: translateY(18px);
+    animation: profileFadeIn 0.6s ease forwards 0.2s;
+}
+
+.profile-section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.75);
+    text-transform: uppercase;
+}
+
+.profile-section-title i {
+    color: #61f4ff;
+    font-size: 13px;
+}
+
+.profile-section + .profile-section {
+    margin-top: 32px;
+}
+
+.profile-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    margin-bottom: 18px;
+}
+
+.profile-field span {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.profile-field input,
+.profile-field textarea,
+.profile-field select {
+    padding: 13px 14px;
+
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.03);
+
+    font-family: inherit;
+    font-size: 13.5px;
+    color: white;
+
+    outline: none;
+    transition: 0.25s ease;
+}
+
+.profile-field select option {
+    background: #12121c;
+}
+
+.profile-field textarea {
+    resize: vertical;
+    min-height: 90px;
+    line-height: 1.6;
+}
+
+.profile-field input:focus,
+.profile-field textarea:focus,
+.profile-field select:focus {
+    border-color: rgba(139, 92, 246, 0.55);
+    background: rgba(139, 92, 246, 0.06);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.12);
+}
+
+.profile-field input::placeholder,
+.profile-field textarea::placeholder {
+    color: rgba(255, 255, 255, 0.28);
+}
+
+.profile-char-count {
+    align-self: flex-end;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.32);
+}
+
+
+/* =========================================
+   SOCIAL LINKS GRID
+========================================= */
+
+.profile-social-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.profile-social-field {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 0 14px;
+
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.03);
+
+    transition: 0.25s ease;
+}
+
+.profile-social-field:focus-within {
+    border-color: rgba(139, 92, 246, 0.55);
+    background: rgba(139, 92, 246, 0.06);
+}
+
+.profile-social-field i {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.35);
+    width: 14px;
+}
+
+.profile-social-field input {
+    flex: 1;
+    min-width: 0;
+
+    padding: 13px 0;
+
+    background: transparent;
+    border: 0;
+    outline: none;
+
+    font-family: inherit;
+    font-size: 13px;
+    color: white;
+}
+
+.profile-social-field input::placeholder {
+    color: rgba(255, 255, 255, 0.28);
+}
+
+
+/* =========================================
+   PORTFOLIO
+========================================= */
+
+.portfolio-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 12px;
+}
+
+.portfolio-row input {
+    flex: 1;
+
+    padding: 12px 14px;
+
+    border-radius: 11px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.03);
+
+    font-family: inherit;
+    font-size: 13px;
+    color: white;
+
+    outline: none;
+}
+
+.portfolio-row input:focus {
+    border-color: rgba(139, 92, 246, 0.55);
+}
+
+.portfolio-remove-btn {
+    flex-shrink: 0;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.03);
+
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.portfolio-remove-btn:hover {
+    border-color: rgba(239, 68, 68, 0.5);
+    color: #f87171;
+    background: rgba(239, 68, 68, 0.08);
+}
+
+.portfolio-add-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 11px 16px;
+
+    border-radius: 11px;
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    background: transparent;
+
+    font-family: inherit;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.55);
+
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.portfolio-add-btn:hover {
+    border-color: rgba(139, 92, 246, 0.5);
+    color: white;
+}
+
+.portfolio-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+
+    margin-top: 16px;
+}
+
+.portfolio-thumb {
+    aspect-ratio: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.portfolio-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* =========================================
+   SAVE ACTIONS
+========================================= */
+
+.profile-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    margin-top: 32px;
+    padding-top: 24px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.profile-save-btn {
+    position: relative;
+    overflow: hidden;
+
+    padding: 14px 30px;
+
+    border: 0;
+    border-radius: 12px;
+
+    font-family: inherit;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: white;
+
+    background: linear-gradient(135deg, #7c3aed, #9333ea, #4f46e5);
+    box-shadow: 0 10px 28px rgba(124, 58, 237, 0.32);
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.profile-save-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 34px rgba(124, 58, 237, 0.5);
+}
+
+.profile-save-btn:disabled {
+    opacity: 0.6;
+    cursor: default;
+    transform: none;
+}
+
+.profile-status-msg {
+    font-size: 12.5px;
+    font-weight: 600;
+}
+
+.profile-status-msg.success { color: #4ade80; }
+.profile-status-msg.error { color: #f87171; }
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 640px) {
+
+    .profile-main { padding: 130px 16px 40px; }
+
+    .profile-card { padding: 26px 22px 30px; }
+
+    .profile-social-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-preview-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}

@@ -18,7 +18,35 @@ const userSchema = new mongoose.Schema({
         type: String,
         enum: ["creator", "brand"],
         default: "creator"
-    }
+    },
+
+    // ===== PROFILE FIELDS =====
+    bio: {
+        type: String,
+        default: ""
+    },
+    category: {
+        type: String,
+        default: ""
+    },
+    avatar: {
+        type: String,
+        default: ""
+    },
+    followers: {
+        type: Number,
+        default: 0
+    },
+    socialLinks: {
+        instagram: { type: String, default: "" },
+        youtube: { type: String, default: "" },
+        twitter: { type: String, default: "" },
+        website: { type: String, default: "" }
+    },
+    portfolio: [
+        { type: String }
+    ]
+
 }, { timestamps: true });
 
 module.exports = mongoose.model("User", userSchema);

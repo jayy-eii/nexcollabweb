@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creator Profile — NexCollab</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .vp-main {
+            max-width: 720px;
+            margin: 120px auto 60px;
+            padding: 0 20px;
+        }
+        .vp-loading {
+            text-align: center;
+            color: #999;
+            padding: 80px 0;
+            font-size: 16px;
+        }
+        .vp-card {
+            background: #12121c;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 36px;
+            color: #fff;
+            display: none;
+        }
+        .vp-header { display: flex; align-items: center; gap: 18px; margin-bottom: 24px; }
+        .vp-avatar {
+            width: 72px; height: 72px; border-radius: 18px;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 28px; color: #fff; overflow: hidden;
+            flex-shrink: 0;
+        }
+        .vp-avatar img { width: 100%; height: 100%; object-fit: cover; }
+        .vp-name { font-size: 26px; font-weight: 800; margin: 0; }
+        .vp-handle { color: #999; margin: 4px 0 0; font-size: 15px; }
+        .vp-niche {
+            margin-left: auto; padding: 8px 16px; border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.15);
+            font-size: 12px; font-weight: 600; letter-spacing: .5px;
+            color: #ccc; white-space: nowrap;
+        }
+        .vp-bio { color: #ccc; line-height: 1.7; margin: 0 0 28px; font-size: 15.5px; }
+        .vp-stats {
+            display: flex; justify-content: space-around;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding: 22px 0; margin-bottom: 28px;
+        }
+        .vp-stat { text-align: center; }
+        .vp-stat strong { display: block; font-size: 22px; }
+        .vp-stat span { font-size: 12px; color: #888; letter-spacing: .5px; }
+        .vp-links { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 28px; }
+        .vp-link {
+            display: flex; align-items: center; gap: 8px;
+            padding: 10px 16px; border-radius: 12px;
+            background: rgba(255,255,255,0.06); color: #ddd;
+            text-decoration: none; font-size: 14px;
+        }
+        .vp-link:hover { background: rgba(255,255,255,0.12); }
+        .vp-portfolio {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 12px; margin-bottom: 28px;
+        }
+        .vp-portfolio img {
+            width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 12px;
+        }
+        .vp-invite-btn {
+            width: 100%; padding: 15px; border: none; border-radius: 14px;
+            background: linear-gradient(135deg,#7b2ff7,#5b0fc3);
+            color: #fff; font-weight: 700; font-size: 16px; cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar-wrapper">
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><span></span><span></span></div>
+                <span class="logo-text">Nex<span>Collab</span></span>
+            </a>
+            <div class="nav-links">
+                <a href="creators.html" class="nav-link">Find Creators</a>
+                <a href="index.html#howItWorks" class="nav-link">How It Works</a>
+            </div>
+            <div class="nav-actions">
+                <div id="navAuthButtons">
+                    <a href="auth.html" class="login-btn">Login</a>
+                    <a href="auth.html" class="start-btn">
+                        <span>Get Started</span>
+                        <span class="start-arrow">→</span>
+                    </a>
+                </div>
+                <div id="navUserMenu" class="nav-user-menu" style="display:none;">
+                    <div class="nav-user-avatar" id="navUserAvatar"></div>
+                    <span id="navUserName" class="nav-user-name"></span>
+                    <button id="navLogoutBtn" class="nav-logout-btn">Logout</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="background">
+        <div class="orb orb-one"></div>
+        <div class="orb orb-two"></div>
+        <div id="particles"></div>
+    </div>
+
+    <main class="vp-main">
+        <div class="vp-loading" id="vpLoading">Loading profile...</div>
+
+        <div class="vp-card" id="vpCard">
+            <div class="vp-header">
+                <div class="vp-avatar" id="vpAvatar"></div>
+                <div>
+                    <h1 class="vp-name" id="vpName"></h1>
+                    <p class="vp-handle" id="vpHandle"></p>
+                </div>
+                <span class="vp-niche" id="vpNiche"></span>
+            </div>
+
+            <p class="vp-bio" id="vpBio"></p>
+
+            <div class="vp-stats">
+                <div class="vp-stat"><strong id="vpFollowers"></strong><span>FOLLOWERS</span></div>
+                <div class="vp-stat"><strong id="vpNicheStat"></strong><span>NICHE</span></div>
+                <div class="vp-stat"><strong id="vpJoined"></strong><span>JOINED</span></div>
+            </div>
+
+            <div class="vp-links" id="vpLinks"></div>
+
+            <div class="vp-portfolio" id="vpPortfolio"></div>
+
+            <button class="vp-invite-btn" id="vpInviteBtn">Invite to Campaign</button>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" crossorigin="anonymous"></script>
+    <script src="view-profile.js"></script>
+
+</body>
+</html>

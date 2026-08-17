@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Mobile responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Your Profile — NexCollab</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="profile.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         NAVBAR (same as home page)
+    ========================================== -->
+
+    <header class="navbar-wrapper">
+
+        <nav class="navbar">
+
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><span></span><span></span></div>
+                <span class="logo-text">Nex<span>Collab</span></span>
+            </a>
+
+            <div class="nav-links">
+                <a href="creators.html" class="nav-link">Find Creators</a>
+                <a href="index.html#howItWorks" class="nav-link">How It Works</a>
+            </div>
+
+            <div class="nav-actions">
+
+                <div id="navAuthButtons">
+                    <a href="auth.html" class="login-btn">Login</a>
+                    <a href="auth.html" class="start-btn">
+                        <span>Get Started</span>
+                        <span class="start-arrow">→</span>
+                    </a>
+                </div>
+
+                <div id="navUserMenu" class="nav-user-menu" style="display:none;">
+                    <div class="nav-user-avatar" id="navUserAvatar"></div>
+                    <span id="navUserName" class="nav-user-name"></span>
+                    <button id="navLogoutBtn" class="nav-logout-btn">Logout</button>
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================================
+         3D BACKGROUND
+    ========================================== -->
+
+    <div class="background">
+        <div class="orb orb-one"></div>
+        <div class="orb orb-two"></div>
+        <div class="glass-shape shape-one"></div>
+        <div class="glass-shape shape-two"></div>
+        <div id="particles"></div>
+    </div>
+
+
+    <!-- =========================================
+         PROFILE
+    ========================================== -->
+
+    <main class="profile-main">
+
+        <!-- Shown while checking login / fetching profile -->
+        <div class="profile-loading" id="profileLoading">
+            <i class="fa-solid fa-spinner fa-spin"></i>
+            Loading your profile...
+        </div>
+
+        <div id="profileContent" style="display:none;">
+
+            <div class="profile-top">
+
+                <div class="profile-avatar-preview" id="avatarPreview">?</div>
+
+                <div>
+                    <h1 id="profileHeaderName">Your Profile</h1>
+                    <p>This is what brands and creators see about you.</p>
+                    <span class="profile-role-badge" id="profileRoleBadge">Creator</span>
+                </div>
+
+            </div>
+
+            <form class="profile-card" id="profileForm">
+
+                <!-- ===== BASIC INFO ===== -->
+                <div class="profile-section">
+
+                    <div class="profile-section-title">
+                        <i class="fa-solid fa-user"></i>
+                        Basic Info
+                    </div>
+
+                    <label class="profile-field">
+                        <span>Avatar image URL</span>
+                        <input type="url" id="fieldAvatar" placeholder="https://example.com/your-photo.jpg">
+                    </label>
+                    <div class="profile-field">
+    <span>Or upload a photo</span>
+    <input type="file" id="fieldAvatarFile" accept="image/*" style="display:none;">
+    <button type="button" class="portfolio-add-btn" id="avatarUploadBtn">
+        <i class="fa-solid fa-upload"></i>
+        Choose photo (gallery or camera)
+    </button>
+    <span class="profile-status-msg" id="avatarUploadStatus"></span>
+</div>
+
+                    <label class="profile-field">
+                        <span>Bio</span>
+                        <textarea id="fieldBio" maxlength="220" placeholder="Tell brands what you create and who you create it for..."></textarea>
+                        <span class="profile-char-count"><span id="bioCount">0</span>/220</span>
+                    </label>
+
+                    <label class="profile-field">
+                        <span>Category / Niche</span>
+                        <select id="fieldCategory">
+                            <option value="">Select a category</option>
+                            <option value="beauty">Beauty</option>
+                            <option value="fashion">Fashion</option>
+                            <option value="fitness">Fitness</option>
+                            <option value="tech">Tech</option>
+                            <option value="food">Food</option>
+                            <option value="travel">Travel</option>
+                            <option value="gaming">Gaming</option>
+                        </select>
+                    </label>
+
+                    <label class="profile-field">
+                        <span>Follower count</span>
+                        <input type="number" id="fieldFollowers" min="0" placeholder="e.g. 12000">
+                    </label>
+
+                </div>
+
+                <!-- ===== SOCIAL LINKS ===== -->
+                <div class="profile-section">
+
+                    <div class="profile-section-title">
+                        <i class="fa-solid fa-link"></i>
+                        Social Links
+                    </div>
+
+                    <div class="profile-social-grid">
+
+                        <div class="profile-social-field">
+                            <i class="fa-brands fa-instagram"></i>
+                            <input type="text" id="fieldInstagram" placeholder="Instagram username or URL">
+                        </div>
+
+                        <div class="profile-social-field">
+                            <i class="fa-brands fa-youtube"></i>
+                            <input type="text" id="fieldYoutube" placeholder="YouTube channel URL">
+                        </div>
+
+                        <div class="profile-social-field">
+                            <i class="fa-brands fa-x-twitter"></i>
+                            <input type="text" id="fieldTwitter" placeholder="X / Twitter username">
+                        </div>
+
+                        <div class="profile-social-field">
+                            <i class="fa-solid fa-globe"></i>
+                            <input type="text" id="fieldWebsite" placeholder="Your website">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- ===== PORTFOLIO ===== -->
+                <div class="profile-section">
+
+                    <div class="profile-section-title">
+                        <i class="fa-solid fa-images"></i>
+                        Portfolio Images
+                    </div>
+
+                    <div id="portfolioList"></div>
+
+<div class="portfolio-btn-row">
+
+    <button type="button" class="portfolio-add-btn" id="addPortfolioBtn">
+        <i class="fa-solid fa-plus"></i>
+        Add image URL
+    </button>
+
+    <input type="file" id="portfolioFileInput" accept="image/*" multiple style="display:none;">
+    <button type="button" class="portfolio-add-btn" id="uploadPortfolioBtn">
+        <i class="fa-solid fa-upload"></i>
+        Upload from device
+    </button>
+
+</div>
+
+                    <div class="portfolio-preview-grid" id="portfolioPreview"></div>
+
+                </div>
+
+                <!-- ===== SAVE ===== -->
+                <div class="profile-actions">
+                    <button type="submit" class="profile-save-btn" id="saveProfileBtn">Save Profile</button>
+                    <span class="profile-status-msg" id="profileStatusMsg"></span>
+                </div>
+
+            </form>
+
+        </div>
+
+    </main>
+
+
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" crossorigin="anonymous"></script>
+
+    <!-- JavaScript -->
+    <script src="profile.js"></script>
+
+</body>
+</html>
