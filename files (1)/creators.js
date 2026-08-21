@@ -140,7 +140,7 @@ if (backToTop) {
    REAL CREATOR DATA (fetched from backend)
 ========================================= */
 
-const CREATORS_API = "http://localhost:3000/api/creators";
+const CREATORS_API = "https://nexcollabweb-backend.onrender.com/api/creators";
 
 let CREATORS = [];
 let creatorsLoaded = false;

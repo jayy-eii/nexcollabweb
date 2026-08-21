@@ -2,7 +2,7 @@
    PROFILE PAGE
 ========================================= */
 
-const PROFILE_API = "http://localhost:3000/api/profile";
+const PROFILE_API = "https://nexcollabweb-backend.onrender.com/api/profile";
 
 
 /* =========================================
@@ -198,8 +198,7 @@ if (addPortfolioBtn) {
    FILE UPLOAD HELPER (uses backend /api/upload)
 ========================================= */
 
-const UPLOAD_API = "http://localhost:3000/api/upload";
-
+const UPLOAD_API = "https://nexcollabweb-backend.onrender.com/api/upload";
 async function uploadFiles(fileList) {
 
     const formData = new FormData();

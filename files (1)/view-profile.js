@@ -2,7 +2,7 @@
    VIEW PROFILE PAGE (public, read-only)
 ========================================= */
 
-const PROFILE_API = "http://localhost:3000/api/profile";
+const PROFILE_API = "https://nexcollabweb-backend.onrender.com/api/profile";
 
 const CATEGORY_GRADIENTS = {
     beauty: "linear-gradient(135deg, #f472b6, #a855f7)",

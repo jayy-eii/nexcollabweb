@@ -444,7 +444,7 @@ async function loadCreatorsCount() {
 
     try {
 
-        const res = await fetch("http://localhost:3000/api/creators");
+        const res = await fetch("https://nexcollabweb-backend.onrender.com/api/creators");
         const data = await res.json();
         const count = (data.creators || []).length +12;
 
