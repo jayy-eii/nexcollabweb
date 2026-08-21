@@ -166,7 +166,7 @@ if (signupForm) {
 
         const name = signupForm.querySelector('input[type="text"]').value;
         const email = signupForm.querySelector('input[type="email"]').value;
-        const password = signupForm.querySelector('input[type="password"]').value;
+        const password = document.getElementById("signupPassword").value;
         const role = document.querySelector(".auth-role-btn.active").dataset.role;
 
         btn.innerHTML = "Please wait...";
@@ -210,8 +210,8 @@ if (loginForm) {
         const btn = loginForm.querySelector(".auth-submit");
         const original = btn.innerHTML;
 
-        const email = loginForm.querySelector('input[type="email"]').value;
-        const password = loginForm.querySelector('input[type="password"]').value;
+        const email = loginForm.querySelector('input[type="email"]').value;const password = document.getElementById("loginPassword").value;
+        
 
         btn.innerHTML = "Please wait...";
         btn.style.opacity = "0.75";
